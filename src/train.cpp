@@ -4,7 +4,7 @@ void Train::addCage(bool light) {
   if (first != nullptr) {
     Cage* oC = new Cage;
     oC->light = light;
-    tail->next = oneCage;
+    tail->next = oC;
     oC->prev = tail;
     oC->next = nullptr;
     tail = tail->next;
@@ -26,7 +26,7 @@ int Train::getLength() {
   while (true) {
     countOp++;
     if (train->light != true) {
-      sizeTrain++;
+      sTr++;
       train = train->next;
     } else {
       train->light = false;
